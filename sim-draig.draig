@@ -1,26 +1,26 @@
-use L10N::CY;
+#use L10N::CY;
 fy $choice;
 fy $continue;
-#fy @bad = <damn stupid ass>;
-#ail-wneud {
-#    $choice = cynhyrfu "Type something, like a number, a string: ";
-#    dweuda "You typed in ｢" ~ ($choice ~~ unrhwy(@bad) ?? "*" x 4 !! $choice) ~ "｣";
-#    rhoddir $choice {
-#        pan "dragon" {
-#            dweuda "which is 'draig' in Welsh"
-#        }
-#        pan unrhwy(@bad) {
-#            dweuda "wash your mouth with soap"
-#        }
-#        pan IntStr {
-#            dweuda "which evaluates to an integer ", $choice
-#        }
-#        pan RatStr {
-#            dweuda "which evaluates to a rational number ", $choice
-#        }
-#        diffyg {
-#            dweuda "which does not evaluate to a number "
-#        }
-#    }
-#    $continue = cynhyrfu "Try again? If not type N: "
-#} hyd $continue pun unrhwy(<N n>)
+fy @bad = <damn stupid ass>;
+ail-wneud {
+    $choice = cynhyrfu "Type something, like a number, a string: ";
+    dweuda "You typed in ｢" ~ ($choice ~~ unrhwy(@bad) ?? "*" x $choice.chars !! $choice) ~ "｣";
+    rhoddir $choice {
+        pan "dragon" {
+            dweuda "which is 'draig' in Welsh"
+        }
+        pan unrhwy(@bad) {
+            dweuda "wash your mouth with soap"
+        }
+        pan IntStr {
+            dweuda "which evaluates to an integer ", $choice
+        }
+        pan RatStr {
+            dweuda "which evaluates to a rational number ", $choice
+        }
+        diffyg {
+            dweuda "which does not evaluate to a number "
+        }
+    }
+    $continue = cynhyrfu "Try again? If not type N: "
+} hyd $continue pun unrhwy(<N n>)

@@ -770,6 +770,5 @@ scope-my        fy
 #use-need     need
 #use-no       no
 #use-require  require
-#use-use      defnydda
-#
-## vim: expandtab shiftwidth=4
+use-use      defnydda
+
