@@ -1,0 +1,145 @@
+=begin rakudoc
+=TITLE Creating a new language
+=SUBTITLE Actually creating a localisation of an existing programming language in an
+existing human language
+
+=head1 Introduction
+
+Nearly all programming languages that are widely used in the world today have English as their
+base human language.
+
+This means that a young person living in a non-English environment must first learn English
+(if only a limited sub-set of English), and then learn the skills needed for coding. This
+puts the majority of the humanity at a disadvantage.
+
+Would it not be useful to create programming
+languages that use the script and words of human languages, but which compile into
+programs that will run with state of the art computer software?
+
+Whilst English runs deep into the guts of most programming languages, thus making it difficult
+to simply create a running translation, it is a relatively simple process for the Raku programming language.
+
+Here is how I created a Welsh cousin of Raku, and I called it 'Draig' - or dragon.
+
+=head1 Considerations
+
+There are some practical obstacles to creating any new programming language, and here are some of the
+ameliorating reasons why Raku is a good choice to base a new one on.
+=item Different languages use different writing systems and most need extra letters not covered by
+the ASCII set.
+
+=item2 The Unicode system has eliminated the problems of displaying and storing different writing systems.
+=item2 The Raku language has Unicode support at every level. Every number, operator, keyword, function etc can be
+written with Unicode symbols. There are a very few exceptions, such as C<;>, C<,>, and C<{}>.
+
+=item Different operating systems
+=item2 There are at least three major operating systems widely used in the world: Window, PC Linux, and Mac OS.
+=item2 Raku runs on all three
+=item All professional programmers are proficient in English, and so can answer questions about program
+errors in English. The number of programmers speaking Welsh is quite small, and the same would be true
+for many human languages.
+
+=item2 This is precisely the problem we are trying to resolve: making the coding profession a possibility for
+humanity as a whole. But there is a vicious circle, professional programmers work in English, so how can they
+help a person in another language?
+
+=item2 The circle can be broken if the interface language, which is the one that programmers work in,
+can be varied, whilst the code that is run on a computer is completely independent of the interface language.
+
+=item2 If the interface language can be easily changed, then a program coded in Welsh, but with a problem,
+can be easily translated (whilst continuing to work as before) into English. The problem can be resolved, corrected,
+and the solution changed (still working) back to Welsh.
+
+=item Modern languages are complicated and need documenting. Documentation is in a human language, not a computer
+language.
+
+=item2 Although the translation of human languages is difficult, and a correct translation of anything meaningful
+from one language to another is intrinsically impossible (for reasons we are not going to go into here),
+reasonable translations of most passages is a problem area that has mostly been solved.
+
+=item2 Raku has an extensive documentation, with translations into several languages and plans for the whole
+documentation suite to be multi-lingual.
+
+=head1 The plan for Y ddraig (the dragon in Welsh)
+
+Whilst the plan is to create I<Y ddraig> as a language that can be used with as little English as possible,
+there are several stages:
+=item First is to create a localization (L10N) of Raku, or a module called C<L10N::CY>.
+=begin item2
+Inside a Raku program, all that will be needed for a completely Welsh program is for the
+first line to be
+    use L10N::CY;
+=end item2
+=item2 All subsequent lines will be in Welsh, but will compile and run as a normal Raku
+program.
+=item2 The program can be easily translated into English, and English Raku programs
+translated in to Welsh. Simple utilities are given below to do this.
+
+=item Next, the operating system has to be adapted so that double clicking on a file
+with a file-extension of C<.draig> will run I<raku> with the I<L10N::CY> module already
+loaded. This is trivial.
+
+=item Coding today is done within an Integrated Coding Environment (IDE). That is a
+little beyond the scope of this project.
+
+=head1 Constraints and first steps
+
+For personal reasons, I stopped using Windows on my PC, and I use Ubuntu Linux exclusively.
+So, where there are terminal sessions, I shall be showing how I created I<Y ddraig>
+using a Linux terminal.
+
+Since I<Y ddraig> is a Raku cousin, or technically a Raku localisation, the Raku language
+needs to be installed. In addition, it needs to be a version of the language released
+after December 2023. Information about the installation of Raku, and its package manager
+B<zef>, can be found L<on the Raku website|https://raku.org>.
+
+The first stage is to create the C<L10N::CY> module. It is simply a normal Raku module,
+which is then installed with the C<zef> package manager.
+
+Raku module development is conventionally done by creating a github repository.
+Working with I<git> is quite simple for the basic functionality, but there is
+a long learning curve when working with others. But none of that is the topic here.
+
+Elizabeth Mattijsen, who is responsible for all this Raku internationalisation magic, has
+created a template internationalization module for the Klingon language (yep: aliens get to
+be the first to use localisations of a Terran computer language)N<My next project is to create
+a localisation with Egyptian hieroglyphs, E<smiley> >
+
+So I git cloned the Klingon, and created a github repo for Welsh repo. My git nic is
+I<finanalyst>, so here's the terminal code lines:
+    git clone https://github.com/lizmat/L10N-TLH.git rakuast-L10N-Klingon
+    git clone https://github.com/finanalyst/rakuast-L10N-CY.git rakuast-L10N-Welsh
+
+In the following, I shall call Elizabeth's repo, the Klingon repo, and mine, the Welsh repo.
+If you want to create your own language, the convention being followed is to name the language
+according to an ISO 639-1 supported language code, at least for the foreseeable future.
+
+The two critical parts of the module are C<update-localization>, and a root text
+file called C<CY>.
+
+Copy the file C<update-localization> from the Klingon repo, and change the line
+    update-module("TLH");
+to
+    update-module("CY");
+
+The biggest step is to translate the terms to be stored in C<CY>. The template for English can be found
+at L<Github Raku localisations| https://github.com/Raku/L10N/localizations/EN/EN>. To get this as a
+local text file, I used the following terminal code:
+    curl 'https://raw.githubusercontent.com/Raku/L10N/main/localizations/EN/EN' > CY
+
+Now comes the translation part. Each uncommented line (a line without C<#> at the start)
+has two parts: a KEY and a TRANSLATION, with some spaces between them. The translation
+process is to substitute the English word with the Welsh word. For example, the line
+    adverb-pc-delete  delete
+becomes
+    adverb-pc-delete  dileu
+
+If a line is uncommented, then it is used to create the C<LION::CY> module. If
+a C<#> is placed at the start, then it is not used. So it is sufficient to begin with
+to translate a minimum number of keys.
+
+For the I<Y ddraig> program below, I only need a dozen words. So in my editor I added C<#> to every
+line, translate a line, and then uncomment it.
+
+
+=end rakudoc
