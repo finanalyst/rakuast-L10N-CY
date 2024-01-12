@@ -1,9 +1,8 @@
-#use L10N::CY;
 fy $choice;
 fy $continue;
-fy @bad = <damn stupid ass>;
+fy @bad = <damn stupid nutcase>;
 ail-wneud {
-    $choice = cynhyrfu "Type something, like a number, a string: ";
+    $choice = cynhyrfu "Type something, like a number, or a string: ";
     dweuda "You typed in ｢" ~ ($choice ~~ unrhwy(@bad) ?? "*" x $choice.chars !! $choice) ~ "｣";
     rhoddir $choice {
         pan "dragon" {

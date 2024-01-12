@@ -1,7 +1,7 @@
 # This file contains the ……… Slang of the Raku Programming Language
 
 #- start of generated part of localization ------------------------------------
-#- Generated on 2024-01-12T18:34:21Z by ./update-localization
+#- Generated on 2024-01-12T22:28:46Z by ./update-localization
 #- PLEASE DON'T CHANGE ANYTHING BELOW THIS LINE
 
 role L10N::CY {
@@ -71,7 +71,7 @@ role L10N::CY {
     token modifier-given { rhoddir}
     token modifier-if { if}
     token modifier-unless { unless}
-    token modifier-until { until}
+    token modifier-until { hyd}
     token modifier-when { pan}
     token modifier-while { hyd}
     token modifier-with { with}
@@ -162,7 +162,7 @@ role L10N::CY {
     token use-need { need}
     token use-no { no}
     token use-require { require}
-    token use-use { use}
+    token use-use { defnydda}
     method core2ast {
         my %mapping = "unrhwy", "any", "cynhyrfu", "prompt", "dweuda", "say";
         my $ast := self.ast;

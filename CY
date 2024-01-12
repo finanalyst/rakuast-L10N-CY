@@ -424,7 +424,7 @@ infix-eq          pun
 modifier-given    rhoddir
 #modifier-if       if
 #modifier-unless   unless
-#modifier-until    hyd
+modifier-until    hyd
 modifier-when     pan
 modifier-while    hyd
 #modifier-with     with

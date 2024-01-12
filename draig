@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+if [ $# -eq 0 ]
+  then
+    echo "Rhaid i chi darparu feil gyda rhaglen"
+    exit
+fi
+RAKUDO_RAKUAST=1 raku -I. -ML10N::CY $1

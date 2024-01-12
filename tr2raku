@@ -1,0 +1,7 @@
+#!/usr/bin/env raku
+use v6.e.PREVIEW;
+use RakuAST::Deparse::L10N::EN;
+
+sub MAIN( $fn where *.IO.f ) {
+    $fn.IO.extension('raku').spurt: $fn.IO.slurp.AST.DEPARSE(RakuAST::Deparse::L10N::EN)
+}

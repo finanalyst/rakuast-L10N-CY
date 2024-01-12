@@ -122,6 +122,10 @@ Copy the file C<update-localization> from the Klingon repo, and change the line
 to
     update-module("CY");
 
+The last line, which is a temporary N<Raku has a new compiler, RakuAST, which has all the multi-lingual magic.
+But it is coming on line, and the module needs to be precompiled with the new compiler> also needs a similar change, namely,
+    "use lib '.'; use L10N::CY".EVAL;
+
 The biggest step is to translate the terms to be stored in C<CY>. The template for English can be found
 at L<Github Raku localisations| https://github.com/Raku/L10N/localizations/EN/EN>. To get this as a
 local text file, I used the following terminal code:
@@ -138,8 +142,114 @@ If a line is uncommented, then it is used to create the C<LION::CY> module. If
 a C<#> is placed at the start, then it is not used. So it is sufficient to begin with
 to translate a minimum number of keys.
 
-For the I<Y ddraig> program below, I only need a dozen words. So in my editor I added C<#> to every
+For the I<Draig> program below, I only need a dozen words. So in my editor I added C<#> to every
 line, translate a line, and then uncomment it.
+
+Once I have enough key words for the program, all that is needed is to run C<update-localization>.
+    ./update-localization
+This then creates a directory tree under C<lib/>.
+
+=head1 Forwards into Draig and running
+
+Here is a short program in Raku (English version), which we store in a file called 'simple.raku'
+=begin code
+my $choice;
+my $continue;
+my @bad = <damn stupid nutcase>;
+
+repeat {
+    $choice = prompt 'Type something, like a number, or a string: ';
+    say 'You typed in ｢' ~ ( $choice ~~ any( @bad ) ?? '*' x $choice.chars !! $choice) ~ '｣';
+    given $choice {
+        when 'dragon' { say "which is 'draig' in Welsh" }
+        when any( @bad ) { say "wash your mouth with soap" }
+        when IntStr { say "which evaluates to an integer ", $choice }
+        when RatStr { say "which evaluates to a rational number ", $choice }
+        default { say "which does not evaluate to a number "}
+    }
+    $continue = prompt 'Try again? If not type N: ';
+} until $continue eq any(<N n>) ;
+=end code
+
+Try running it in a terminal as follows:
+    raku -I. simple.raku
+
+The C<-I.> option means that we are running the program in the director where the C<L10N::CY> module
+is being developed.
+
+The code uses 11 keywords, which I translated and put into C<CY>. Obviously there is a significant number of
+strings that are in English, and these need translating into Welsh for a completely Welsh
+software snippet. But in a moment, the English will also demonstrate what has been translated.
+
+Now lets translate the program using a simple Raku utility called C<tr2draig>. The utility
+is the following Raku script:
+=begin code
+#!/usr/bin/env raku
+use v6.e.PREVIEW;
+use RakuAST::Deparse::L10N::CY;
+
+sub MAIN( $fn where *.IO.f ) {
+    $fn.IO.extension('draig').spurt: $fn.IO.slurp.AST.DEPARSE(RakuAST::Deparse::L10N::CY)
+}
+=end code
+
+Breaking the program down, C<v6.e.PREVIEW> causes the program to use the new RakuAST compiler.
+C<RakuAST::Deparse::L10N::CY> was created by C<update-localization> from the same CY file.
+Inside the C<MAIN sub>, the contents of C<$fn> are 'slurped' into memory as a string,
+the string is parsed in English using the RakuAST compiler, then deparsed into Welsh.
+The new program is now stored in a new file, with the same base filename as the one input
+but with the extension 'draig' in place of 'raku'.
+
+The utility (which has been given permission to execute) is run, eg.,
+    tr2draig simple.raku
+
+This produces a file C<simple.draig>, which contains
+=begin code
+fy $choice;
+fy $continue;
+fy @bad = <damn stupid nutcase>;
+ail-wneud {
+    $choice = cynhyrfu "Type something, like a number, or a string: ";
+    dweuda "You typed in ｢" ~ ($choice ~~ unrhwy(@bad) ?? "*" x $choice.chars !! $choice) ~ "｣";
+    rhoddir $choice {
+        pan "dragon" {
+            dweuda "which is 'draig' in Welsh"
+        }
+        pan unrhwy(@bad) {
+            dweuda "wash your mouth with soap"
+        }
+        pan IntStr {
+            dweuda "which evaluates to an integer ", $choice
+        }
+        pan RatStr {
+            dweuda "which evaluates to a rational number ", $choice
+        }
+        diffyg {
+            dweuda "which does not evaluate to a number "
+        }
+    }
+    $continue = cynhyrfu "Try again? If not type N: "
+} hyd $continue pun unrhwy(<N n>)
+=end code
+
+Now we create a utility to run C<draig> programs. The easiest way to create BASH file
+called C<draig> as follows
+    #!/usr/bin/env bash
+    if [ $# -eq 0 ]
+      then
+        echo "Rhaid i chi darparu feil gyda rhaglen"
+        exit
+    fi
+    RAKUDO_RAKUAST=1 raku -I. -ML10N::CY $1
+
+No try running this as
+    draig simple.draig
+
+And the running code produces exactly the same output.
+
+So now we can translate any English version of a Raku program into a Draig program,
+and C<draig> will run it. Well, only if the Raku program uses the 11 keywords I translated.
+
 
 
 =end rakudoc
