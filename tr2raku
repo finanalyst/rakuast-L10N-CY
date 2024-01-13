@@ -1,8 +1,2 @@
-#!/usr/bin/env raku
-use v6.e.PREVIEW;
-use RakuAST::Deparse::L10N::EN;
-use RakuAST::Deparse::L10N::CY;
-#use L10N::CY;
-
-my $pr = 'simple.draig'.IO.slurp;
-my $ast = $pr.AST.DEPARSE(L10N::EN);
+fy $pr = 'simple.draig'.IO.slurp;
+fy $ast = $pr.AST;

@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-RAKUDO_RAKUAST=1 raku -ML10N::CY $1
+RAKUDO_RAKUAST=1 raku -I. -ML10N::CY $1

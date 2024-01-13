@@ -17,6 +17,8 @@
     "RakuAST::Deparse::L10N::CY": "lib/RakuAST/Deparse/L10N/CY.rakumod"
   },
   "resources": [
+    "bin/draig",
+    "bin/tr2draig"
   ],
   "source-url": "https://github.com/finanalyst/L10N-CY.git",
   "tags": [
