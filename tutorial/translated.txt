@@ -1,0 +1,601 @@
+008 yn bodoli
+009 k
+010 kv
+011 t
+012 v
+015 a
+016 arae
+017 b
+018 slaes
+019 c
+020 cau
+021 dwbl
+022 gweithred
+023 f
+024 swyddogaeth
+025 fformat
+026 h
+027 stwnsh
+028 heredoc
+029 o
+030 q
+031 qq
+032 o ddyfyniadau
+033 s
+034 sgalar
+035 sengl
+036 i
+037 v
+038 val
+039 gw
+040 gair
+041 gw
+042 x
+045 c
+046 parhau
+047 cyn
+048 hollgynhwysfawr
+049 g
+050 byd-eang
+051 ff
+052 cas anwybyddu
+053 marc anwybyddu
+054 ii
+055 m
+056 mm
+057 eg
+058 fed
+059 tro
+060 gorgyffwrdd
+061 t
+062 post
+063 r
+064 clicied
+065 ydd
+066 s
+067 o'r un achos
+068 o'r un marc
+069 un gofod
+070 gofod arwyddo
+071 ss
+072 st
+073 i
+074 x
+079 elsif
+080 ar gyfer
+083 dolen
+084 neu gyda
+086 oni bai
+089 pryd bynnag
+090 tra
+091 gyda
+092 heb
+095 ble
+098 abs
+099 i gyd
+100 o wrth-beiriau
+102 atodiad
+103 ast
+104 atomig-ychwanegu
+105 atomig-aseinio
+106 atomig-dec-nôl
+107 atomig-nol
+108 atomig-nol-ychwanegu
+109 atomig-nol-rhag
+110 atomig-nol-gan gynnwys
+111 atomig-nol-is
+112 atomig-inc-nol
+113 atomig-is-nol
+114 aros
+117 bag
+118 mechniaeth allan
+119 bendith
+122 ffrâm alwad
+123 o alwadau
+124 callwith
+125 can- iawn
+126 cas
+127 categoreiddio
+128 nenfwd
+129 char
+130 chdir
+131 chmod
+132 chomp
+133 golwyth
+134 chown
+135 cr
+136 cr
+137 dosbarthu
+138 agos
+139 cmp-iawn
+140 o godau
+141 crib
+142 o gyfuniadau
+143 conj
+144 yn cynnwys
+145 croes
+148 dadgodio
+149 dyfnder
+150 diffiniedig
+151 diag
+152 marw
+153 yn marw-iawn
+154 dir
+155 yn iawn
+156 gwneud
+157 dwcfa
+160 elem
+161 alltud
+162 amgodio
+163 diwedd
+164 diwedd-gyda
+165 eval-yn marw-iawn
+166 eval-bywydau-iawn
+167 ymadael
+168 exp
+169 expmod
+172 methu
+173 ffaelu-fel
+174 fc
+175 gyntaf
+176 fflat
+177 fflip
+178 llawr
+179 fflangell
+180 fmt
+181 llawn-rwystr
+184 cael
+185 getc
+186 gist
+187 grep
+190 stwnsh
+191 pen
+194 mewnoliad
+195 mynegai
+196 mynegeion
+197 indir
+198 yn
+199 yn-tua
+200 yn-ddwfn
+201 yn-presennol
+202 isa-iawn
+203 ddim
+204 eitem
+207 ymuno
+210 allwedd
+211 allwedd
+212 kv
+215 diweddaf
+216 galwad olaf
+217 lc
+218 fel
+219 llinell
+220 cyswllt
+221 rhestr
+222 o fywydau yn iawn
+223 lsb
+226 gwneuthur
+227 map
+228 cyfateb
+229 uchafswm
+230 mun
+231 minmax
+232 cymysgedd
+233 mkdir
+234 symud
+235 msb
+238 newydd
+239 nesaf
+240 galwad nesaf
+241 yr un nesaf
+242 nesaf
+243 noc
+244 dim
+245 ddim
+246 nodyn
+249 iawn
+250 un
+251 agored
+252 ord
+253 ordeiniad
+256 pâr
+257 o barau
+258 dosran-sylfaen
+259 pasio
+260 o gyfnewidiadau
+261 pigo
+262 cynllun
+263 pop
+264 rhagymadrodd
+265 print
+266 printf
+267 symud ymlaen
+269 gwthio
+270 rhoi
+273 rand
+274 ail-wneud
+275 lleihau
+276 ailadrodd
+277 atteb
+278 dychwelyd
+279 dychwelyd-rw
+280 cefn
+281 rindex
+282 rmdir
+283 rhôl
+284 gwreiddiau
+285 cylchdroi
+286 rownd
+287 rowndrobin
+288 rhediad
+291 un achos
+292 o'r un marc
+293 yr un ag
+295 set
+296 plisgyn
+297 sifft
+298 arwydd
+299 arwydd
+300 sgip
+301 sgip-gorffwys
+302 cwsg
+303 cwsg-amserydd
+304 cwsg-hyd
+305 slip
+306 slurp
+307 tamaid
+308 snitch
+309 felly
+310 didoli
+311 sbeis
+312 hollti
+313 sbrintf
+314 yspail
+315 sqrt
+316 sgwish
+317 traen
+318 yn dechreu-gyda
+319 subbuf
+320 subbuf-rw
+321 subst
+322 substr
+323 substr-eq
+324 substr-rw
+325 is-brawf
+326 llwyddo
+327 swm
+328 symlink
+331 gynffon
+332 cymryd
+333 cymryd-rw
+334 tc
+335 tclc
+336 taflu-fel
+337 todo
+338 traws
+339 trwm
+340 trim-arweiniol
+341 trîm-trael
+342 blaenoriad
+345 uc
+346 anghymhariaeth
+347 uniname
+348 o unenwau
+349 uniparse
+350 uniprop
+351 unipr
+352 unigryw
+353 cyffredinol
+354 o brifysgolion
+355 annhebyg
+356 ddatgysylltu
+357 anbegynol
+358 unshift
+359 defnydd-iawn
+362 val
+363 gwerth
+364 o werthoedd
+367 rhybuddio
+368 gair
+369 o eiriau
+372 zip
+375 (parhad)
+376 (elem)
+377 ^ff
+378 ^ff^
+379 ^ffff
+380 ^fff^
+381 ar ol
+382 a
+383 ac yna
+384 o'r blaen
+385 ond
+386 cmp
+387 coll
+388 div
+389 yn gwneud
+391 ff
+392 ff^
+393 ff
+394 ff^
+395 gcd
+396 ge
+397 gt
+398 lcm
+399 le
+400 o goesau
+401 lt
+402 uchafswm
+403 mun
+404 minmax
+405 mod
+406 ne
+407 ddim yna
+408 o
+409 neu
+410 arall
+411 unicmp
+412 x
+413 X
+414 xx
+415 Z
+418 R
+419 X
+420 Z
+423 am
+425 os
+426 oni bai
+430 gyda
+431 heb
+434 aml
+435 yn unig
+436 proto
+439 absoliwt
+440 o weithredoedd
+441 ap
+442 atodiad
+443 arg0
+444 arg
+445 fel
+446 yn
+447 awd
+450 enw sylfaen
+451 swp
+452 bin
+453 gwaedu
+454 darlledu
+457 dal
+458 siec
+459 chomp
+460 yn agos
+461 gorchymyn
+462 ategu
+463 yn hollol
+464 parhau
+465 rheolaeth
+466 cyfrif
+467 creu
+468 creu yn unig
+469 cwd
+470 CWD
+473 dyddiad
+474 dydd
+475 gradd
+476 dileu
+477 cyfenw
+480 o elemau
+481 emit-amseredig
+482 amg
+483 amgodio
+484 diwedd
+485 cyfeiliorni
+486 bob
+487 cyn
+488 anghynhwysol
+489 hollgynhwysfawr
+490 yn dod i ben
+493 teulu
+494 enw ffeil
+495 hidlydd
+496 fformatiwr
+499 g
+500 gid
+501 bydol
+504 gwesteiwr
+505 awr
+508 ff
+509 anwybyddu
+510 marc anwybyddu
+511 ii
+512 i mewn
+513 i mewn
+516 saer
+519 k
+520 allwedd
+521 kv
+524 gwrando
+525 gwesteiwr lleol
+526 porthladd lleol
+529 cyfateb
+530 uno
+531 munud
+532 mm
+533 modd
+534 mis
+537 enw
+538 eg
+539 nl
+540 nl-yn
+541 nl-allan
+542 heb rwystro
+543 eg
+546 i ffwrdd
+547 allan
+548 allan-byffer
+549 of
+550 gorgyffwrdd
+553 t
+554 rhan
+555 rhan
+556 porthladd
+557 pos
+558 cynradd
+561 cwarterol
+564 r
+565 ydd
+566 go iawn
+567 amnewid
+568 rheol
+569 rh
+570 rx
+573 o'r un achos
+574 un gofod
+575 trefnydd
+576 eiliad
+577 uwchradd
+578 eiliad
+579 wedi eu rhannu
+580 maint
+581 slip
+582 MANYLION
+583 sgwsh
+584 eg
+585 eg
+586 statws
+587 llym
+588 tanysgrifiad
+589 uwchysgrif
+592 trydyddol
+593 prawf
+594 eg
+595 o weithiau
+596 cylchfa amser
+597 cyfieith-nl
+598 blaenoriad
+601 uid
+602 diweddariad
+605 v
+606 gwerth
+607 vent-yn
+608 ver
+609 gyfrol
+612 gw
+613 lle
+614 ennill-verbatim-args
+617 x
+620 flwyddyn
+623 dosbarth
+624 gramadeg
+625 modiwl
+626 pecyn
+627 rôl
+630 DECHRAU
+631 DALAETH
+632 GWIRODYDD
+633 GAU
+634 RHEOLAETH
+635 DOC
+636 DIWEDD
+637 ENAID
+638 CYNTAF
+639 INIT
+640 CADW
+641 OLAF
+642 GADAEL
+643 NESAF
+644 SWYDD
+645 PRE
+646 GADAEL
+647 UNDOD
+650 deinamig-cwmpas
+651 angheuol
+652 mewnol
+653 dirmygedig
+654 isms
+655 lib
+656 MYNEGAI
+657 MONKEY-GUTS
+658 MONKEY-GWELER-NO-EVAL
+659 MYNEGAI-DDYN
+660 nqp
+661 rhagluniaeth
+662 meddal
+663 llym
+664 olrhain
+665 o newidynnau
+666 o bryderon
+669 ddim
+670 felly
+673 m
+674 ms
+675 q
+676 Cw
+677 qq
+678 rx
+679 s
+680 S
+681 eg
+682 Ss
+685 dull
+686 regex
+687 rheol
+688 is
+689 is-ddull
+690 tocyn
+693 anon
+694 cynydd
+695 cyson
+696 wedi
+697 HAS
+699 ein
+700 wladwriaeth
+701 uned
+704 hefyd
+705 wneud
+706 awyddus
+707 ymgasglu
+708 hyper
+709 diog
+710 yn dawel
+711 hil
+712 ymateb
+713 suddo
+714 dechreu
+715 cyflenwad
+716 ceisio
+729 nano
+730 yn awr
+731 pi
+732 rand
+733 hunan
+734 tau
+735 amser
+738 wedi eu hadeiladu
+739 copi
+740 rhagosodedig
+741 ANGHOFIEDIG
+742 cyfystyr
+743 allforio
+744 cudd-o-gefn
+745 cudd-o-DDEFNYDD
+746 gweithredu-manylion
+747 rhyddach
+748 nodol
+749 pur
+750 amrwd
+751 rh
+752 prawf-haeriad
+753 tynnach
+756 yn gwneud
+757 llaw
+758 o guddfan
+759 yn
+760 o
+761 yn dychwelyd
+762 o ymddiriedolaethau
+765 enum
+766 is-set
+769 mewnforio
+770 angen
+771 na
+772 angen
