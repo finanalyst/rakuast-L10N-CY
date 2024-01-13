@@ -1,0 +1,209 @@
+        # Creating a new language
+>Actually creating a localisation of an existing programming language in an existing human language
+
+
+## Table of Contents
+[Introduction](#introduction)  
+[Considerations](#considerations)  
+[The plan for Y ddraig (the dragon in Welsh)](#the-plan-for-y-ddraig-the-dragon-in-welsh)  
+[Constraints and first steps](#constraints-and-first-steps)  
+[Forwards into Draig and running](#forwards-into-draig-and-running)  
+[Completing the translation](#completing-the-translation)  
+
+----
+# Introduction
+Nearly all programming languages that are widely used in the world today have English as their base human language.
+
+This means that a young person living in a non-English environment must first learn English (if only a limited sub-set of English), and then learn the skills needed for coding. This puts the majority of the humanity at a disadvantage.
+
+Would it not be useful to create programming languages that use the script and words of human languages, but which compile into programs that will run with state of the art computer software?
+
+Whilst English runs deep into the guts of most programming languages, thus making it difficult to simply create a running translation, it is a relatively simple process for the Raku programming language.
+
+Here is how I created a Welsh cousin of Raku, and I called it 'Draig' - or dragon.
+
+# Considerations
+There are some practical obstacles to creating any new programming language, and here are some of the ameliorating reasons why Raku is a good choice to base a new one on.
+
+*  Different languages use different writing systems and most need extra letters not covered by the ASCII set.
+
+	*  The Unicode system has eliminated the problems of displaying and storing different writing systems.
+
+	*  The Raku language has Unicode support at every level. Every number, operator, keyword, function etc can be written with Unicode symbols. There are a very few exceptions, such as `;`, `,`, and `{}`.
+
+*  Different operating systems
+
+	*  There are at least three major operating systems widely used in the world: Window, PC Linux, and Mac OS.
+
+	*  Raku runs on all three
+
+*  All professional programmers are proficient in English, and so can answer questions about program errors in English. The number of programmers speaking Welsh is quite small, and the same would be true for many human languages.
+
+	*  This is precisely the problem we are trying to resolve: making the coding profession a possibility for humanity as a whole. But there is a vicious circle, professional programmers work in English, so how can they help a person in another language?
+
+	*  The circle can be broken if the interface language, which is the one that programmers work in, can be varied, whilst the code that is run on a computer is completely independent of the interface language.
+
+	*  If the interface language can be easily changed, then a program coded in Welsh, but with a problem, can be easily translated (whilst continuing to work as before) into English. The problem can be resolved, corrected, and the solution changed (still working) back to Welsh.
+
+*  Modern languages are complicated and need documenting. Documentation is in a human language, not a computer language.
+
+	*  Although the translation of human languages is difficult, and a correct translation of anything meaningful from one language to another is intrinsically impossible (for reasons we are not going to go into here), reasonable translations of most passages is a problem area that has mostly been solved.
+
+	*  Raku has an extensive documentation, with translations into several languages and plans for the whole documentation suite to be multi-lingual.
+
+# The plan for Y ddraig (the dragon in Welsh)
+Whilst the plan is to create _Y ddraig_ as a language that can be used with as little English as possible, there are several stages:
+
+*  First is to create a localization (L10N) of Raku, or a module called `L10N::CY`.
+
+	*  Inside a Raku program, all that will be needed for a completely Welsh program is for the first line to be use L10N::CY;
+
+	*  All subsequent lines will be in Welsh, but will compile and run as a normal Raku program.
+
+	*  The program can be easily translated into English, and English Raku programs translated in to Welsh. Simple utilities are given below to do this.
+
+*  Next, the operating system has to be adapted so that double clicking on a file with a file-extension of `.draig` will run _raku_ with the _L10N::CY_ module already loaded. This is trivial.
+
+*  Coding today is done within an Integrated Coding Environment (IDE). That is a little beyond the scope of this project.
+
+# Constraints and first steps
+For personal reasons, I stopped using Windows on my PC, and I use Ubuntu Linux exclusively. So, where there are terminal sessions, I shall be showing how I created _Y ddraig_ using a Linux terminal.
+
+Since _Y ddraig_ is a Raku cousin, or technically a Raku localisation, the Raku language needs to be installed. In addition, it needs to be a version of the language released after December 2023. Information about the installation of Raku, and its package manager **zef**, can be found [on the Raku website](https://raku.org).
+
+The first stage is to create the `L10N::CY` module. It is simply a normal Raku module, which is then installed with the `zef` package manager.
+
+Raku module development is conventionally done by creating a github repository. Working with _git_ is quite simple for the basic functionality, but there is a long learning curve when working with others. But none of that is the topic here.
+
+Elizabeth Mattijsen, who is responsible for all this Raku internationalisation magic, has created a template internationalization module for the Klingon language (yep: aliens get to be the first to use localisations of a Terran computer language)[ 1 ].
+
+So I git cloned the Klingon, and created a github repo for Welsh repo. My git nic is _finanalyst_, so here's the terminal code lines: git clone https://github.com/lizmat/L10N-TLH.git rakuast-L10N-Klingon git clone https://github.com/finanalyst/rakuast-L10N-CY.git rakuast-L10N-Welsh
+
+In the following, I shall call Elizabeth's repo, the Klingon repo, and mine, the Welsh repo. If you want to create your own language, the convention being followed is to name the language according to an ISO 639-1 supported language code, at least for the foreseeable future.
+
+The two critical parts of the module are `update-localization`, and a root text file called `CY`.
+
+Copy the file `update-localization` from the Klingon repo, and change the line update-module("TLH"); to update-module("CY");
+
+The last line, which is a temporary [ 2 ] also needs a similar change, namely, "use lib '.'; use L10N::CY".EVAL;
+
+The biggest step is to translate the terms to be stored in `CY`. The template for English can be found at [Github Raku localisations](https://github.com/Raku/L10N/localizations/EN/EN). To get this as a local text file, I used the following terminal code: curl 'https://raw.githubusercontent.com/Raku/L10N/main/localizations/EN/EN' > CY
+
+Now comes the translation part. Each uncommented line (a line without `#` at the start) has two parts: a KEY and a TRANSLATION, with some spaces between them. The translation process is to substitute the English word with the Welsh word. For example, the line adverb-pc-delete delete becomes adverb-pc-delete dileu
+
+If a line is uncommented, then it is used to create the `LION::CY` module. If a `#` is placed at the start, then it is not used. So it is sufficient to begin with to translate a minimum number of keys.
+
+For the _Draig_ program below, I only need a dozen words. So in my editor I added `#` to every line, translate a line, and then uncomment it.
+
+Once I have enough key words for the program, all that is needed is to run `update-localization`. ./update-localization This then creates a directory tree under `lib/`.
+
+# Forwards into Draig and running
+Here is a short program in Raku (English version), which we store in a file called 'simple.raku'
+
+```
+my $choice;
+my $continue;
+my @bad = <damn stupid nutcase>;
+
+repeat {
+    $choice = prompt 'Type something, like a number, or a string: ';
+    say 'You typed in ｢' ~ ( $choice ~~ any( @bad ) ?? '*' x $choice.chars !! $choice) ~ '｣';
+    given $choice {
+        when 'dragon' { say "which is 'draig' in Welsh" }
+        when any( @bad ) { say "wash your mouth with soap" }
+        when IntStr { say "which evaluates to an integer ", $choice }
+        when RatStr { say "which evaluates to a rational number ", $choice }
+        default { say "which does not evaluate to a number "}
+    }
+    $continue = prompt 'Try again? If not type N: ';
+} until $continue eq any(<N n>) ;
+
+```
+Try running it in a terminal as follows: raku -I. simple.raku
+
+The `-I.` option means that we are running the program in the director where the `L10N::CY` module is being developed.
+
+The code uses 11 keywords, which I translated and put into `CY`. Obviously there is a significant number of strings that are in English, and these need translating into Welsh for a completely Welsh software snippet. But in a moment, the English will also demonstrate what has been translated.
+
+Now lets translate the program using a simple Raku utility called `tr2draig`. The utility is the following Raku script:
+
+```
+#!/usr/bin/env raku
+use v6.e.PREVIEW;
+use RakuAST::Deparse::L10N::CY;
+
+sub MAIN( $fn where *.IO.f ) {
+    $fn.IO.extension('draig').spurt: $fn.IO.slurp.AST.DEPARSE(RakuAST::Deparse::L10N::CY)
+}
+
+```
+Breaking the program down, `v6.e.PREVIEW` causes the program to use the new RakuAST compiler. `RakuAST::Deparse::L10N::CY` was created by `update-localization` from the same CY file. Inside the `MAIN sub`, the contents of `$fn` are 'slurped' into memory as a string, the string is parsed in English using the RakuAST compiler, then deparsed into Welsh. The new program is now stored in a new file, with the same base filename as the one input but with the extension 'draig' in place of 'raku'.
+
+The utility (which has been given permission to execute) is run, eg., tr2draig simple.raku
+
+This produces a file `simple.draig`, which contains
+
+```
+fy $choice;
+fy $continue;
+fy @bad = <damn stupid nutcase>;
+ailadrodd {
+    $choice = prydlon "Type something, like a number, or a string: ";
+    dywedyd "You typed in ｢" ~ ($choice ~~ unrhyw(@bad) ?? "*" x $choice.golosg !! $choice) ~ "｣";
+    a-roddwyd $choice {
+        pryd "dragon" {
+            dywedyd "which is 'draig' in Welsh"
+        }
+        pryd unrhyw(@bad) {
+            dywedyd "wash your mouth with soap"
+        }
+        pryd IntStr {
+            dywedyd "which evaluates to an integer ", $choice
+        }
+        pryd RatStr {
+            dywedyd "which evaluates to a rational number ", $choice
+        }
+        rhagosodedig {
+            dywedyd "which does not evaluate to a number "
+        }
+    }
+    $continue = prydlon "Try again? If not type N: "
+} hyd $continue eq unrhyw(<N n>)
+
+```
+Now we create a utility to run `draig` programs. The easiest way to create BASH file called `draig` as follows #!/usr/bin/env bash RAKUDO_RAKUAST=1 raku -I. -ML10N::CY $1
+
+No try running this as draig simple.draig
+
+And the running code produces exactly the same output. The output is still in English, and for completeness, I should translate all of the text strings to Welsh as well.
+
+An added bonus is that simply typing `draig` without a filename will give you the Raku REPL, but accepting Welsh keywords.
+
+# Completing the translation
+At this point, we can translate any English version of a Raku program into a Draig program, and `draig` will run it, but only if the Raku program uses the 11 keywords I translated.
+
+In order to create a full localisation, all of the **Translation** values need to be converted to Welsh. The **first** step (and I really must re-emphasise it is a first step) is to use an automated translation tool. A correct localisation will need first-language Welsh speakers to go through the `CY` file and correct the translations.
+
+For the automated translation, I again downloaded the EN template into a `CY` file, and cleaned it up a bit by taking out the `# KEY TRANSLATION` lines.
+
+Then I split the CY file into two, with line numbers at the start of each line to help match later. One file is `partials.txt` with the starting key, and the second file is `to-be-translated.txt`. Both contain approximately 700 lines.
+
+Next I copy/pasted the lines for translation into [Google's translate to Welsh page](https://translate.google.co.uk/?sl=auto&amp;tl=cy&amp;op=translate). The operation took a couple of copy/pastes due to size limitations, but the text is not overly large.
+
+The translated text can be copied straight back to a new file (translated.txt), and then recombined with `partials.txt` to create CY.
+
+I have put the Raku scripts for the automation into the directory `automation-helpers` in my [Githup Welsh localisation repo](https://github/finanalyst/rakuast-L10N-CY).
+
+
+
+
+
+
+----
+###### 1
+My next project is to create a localisation with Egyptian hieroglyphs 
+###### 2
+Raku has a new compiler, RakuAST, which has all the multi-lingual magic. But it is coming on line, and the module needs to be precompiled with the new compiler
+
+----
+Rendered from How-to-create-a-language at 2024-01-13T17:09:21Z

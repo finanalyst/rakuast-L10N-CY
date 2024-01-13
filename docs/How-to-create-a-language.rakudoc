@@ -103,7 +103,7 @@ a long learning curve when working with others. But none of that is the topic he
 Elizabeth Mattijsen, who is responsible for all this Raku internationalisation magic, has
 created a template internationalization module for the Klingon language (yep: aliens get to
 be the first to use localisations of a Terran computer language)N<My next project is to create
-a localisation with Egyptian hieroglyphs, E<smiley> >
+a localisation with Egyptian hieroglyphs >.
 
 So I git cloned the Klingon, and created a github repo for Welsh repo. My git nic is
 I<finanalyst>, so here's the terminal code lines:
@@ -208,47 +208,69 @@ This produces a file C<simple.draig>, which contains
 fy $choice;
 fy $continue;
 fy @bad = <damn stupid nutcase>;
-ail-wneud {
-    $choice = cynhyrfu "Type something, like a number, or a string: ";
-    dweuda "You typed in ｢" ~ ($choice ~~ unrhwy(@bad) ?? "*" x $choice.chars !! $choice) ~ "｣";
-    rhoddir $choice {
-        pan "dragon" {
-            dweuda "which is 'draig' in Welsh"
+ailadrodd {
+    $choice = prydlon "Type something, like a number, or a string: ";
+    dywedyd "You typed in ｢" ~ ($choice ~~ unrhyw(@bad) ?? "*" x $choice.golosg !! $choice) ~ "｣";
+    a-roddwyd $choice {
+        pryd "dragon" {
+            dywedyd "which is 'draig' in Welsh"
         }
-        pan unrhwy(@bad) {
-            dweuda "wash your mouth with soap"
+        pryd unrhyw(@bad) {
+            dywedyd "wash your mouth with soap"
         }
-        pan IntStr {
-            dweuda "which evaluates to an integer ", $choice
+        pryd IntStr {
+            dywedyd "which evaluates to an integer ", $choice
         }
-        pan RatStr {
-            dweuda "which evaluates to a rational number ", $choice
+        pryd RatStr {
+            dywedyd "which evaluates to a rational number ", $choice
         }
-        diffyg {
-            dweuda "which does not evaluate to a number "
+        rhagosodedig {
+            dywedyd "which does not evaluate to a number "
         }
     }
-    $continue = cynhyrfu "Try again? If not type N: "
-} hyd $continue pun unrhwy(<N n>)
+    $continue = prydlon "Try again? If not type N: "
+} hyd $continue eq unrhyw(<N n>)
 =end code
 
 Now we create a utility to run C<draig> programs. The easiest way to create BASH file
 called C<draig> as follows
     #!/usr/bin/env bash
-    if [ $# -eq 0 ]
-      then
-        echo "Rhaid i chi darparu feil gyda rhaglen"
-        exit
-    fi
     RAKUDO_RAKUAST=1 raku -I. -ML10N::CY $1
 
 No try running this as
     draig simple.draig
 
-And the running code produces exactly the same output.
+And the running code produces exactly the same output. The output is still in English,
+and for completeness, I should translate all of the text strings to Welsh as well.
 
-So now we can translate any English version of a Raku program into a Draig program,
-and C<draig> will run it. Well, only if the Raku program uses the 11 keywords I translated.
+An added bonus is that simply typing C<draig> without a filename will give you the
+Raku REPL, but accepting Welsh keywords.
+
+=head1 Completing the translation
+
+At this point, we can translate any English version of a Raku program into a Draig program,
+and C<draig> will run it, but only if the Raku program uses the 11 keywords I translated.
+
+In order to create a full localisation, all of the B<Translation> values need to be converted
+to Welsh. The B<first> step (and I really must re-emphasise it is a first step) is to use
+an automated translation tool. A correct localisation will need first-language Welsh speakers
+to go through the C<CY> file and correct the translations.
+
+For the automated translation, I again downloaded the EN template into a C<CY> file, and cleaned it up a bit
+by taking out the C<# KEY    TRANSLATION> lines.
+
+Then I split the CY file into two, with line numbers at the start of
+each line to help match later. One file is C<partials.txt> with the starting key, and the second file
+is C<to-be-translated.txt>. Both contain approximately 700 lines.
+
+Next I copy/pasted the lines for translation into L<Google's translate to Welsh page|https://translate.google.co.uk/?sl=auto&tl=cy&op=translate>.
+The operation took a couple of copy/pastes due to size limitations, but the text is not overly large.
+
+The translated text can be copied straight back to a new file (translated.txt), and then recombined with
+C<partials.txt> to create CY.
+
+I have put the Raku scripts for the automation into the directory C<automation-helpers> in my
+L<Githup Welsh localisation repo| https://github/finanalyst/rakuast-L10N-CY>.
 
 
 
