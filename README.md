@@ -8,7 +8,7 @@ SYNOPSIS
 
 ```raku
 use L10N::CY;
-dwueda "Hello World";
+dywedyd "Hello World";
 ```
 
 DESCRIPTION

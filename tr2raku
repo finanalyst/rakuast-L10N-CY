@@ -1,2 +1,0 @@
-fy $pr = 'simple.draig'.IO.slurp;
-fy $ast = $pr.AST;

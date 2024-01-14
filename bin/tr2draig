@@ -1,7 +1,6 @@
 #!/usr/bin/env raku
-use v6.e.PREVIEW;
-use RakuAST::Deparse::L10N::CY;
-
-sub MAIN( $fn where *.IO.f ) {
-    $fn.IO.extension('draig').spurt: $fn.IO.slurp.AST.DEPARSE(RakuAST::Deparse::L10N::CY)
+sub MAIN(
+  $filename where *.IO.f  #= source file to be localized to Welsh
+) {
+    $filename.IO.extension('draig').spurt: $filename.IO.slurp.AST.DEPARSE("CY")
 }

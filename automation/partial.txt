@@ -1,0 +1,776 @@
+001 # This file contains that … "translation" of features of the
+002 # Raku Programming Language.
+003 
+004 # See https://github.com/Raku/L10N/tree/main/localizations#readme
+005 # for more information.
+006 
+007 # KEY             TRANSLATION
+008 adverb-pc-delete
+009 adverb-pc-exists
+010 adverb-pc-k
+011 adverb-pc-kv
+012 adverb-pc-p
+013 adverb-pc-v
+014 
+015 # KEY                TRANSLATION
+016 adverb-q-a
+017 adverb-q-array
+018 adverb-q-b
+019 adverb-q-backslash
+020 adverb-q-c
+021 adverb-q-closure
+022 adverb-q-double
+023 adverb-q-exec
+024 adverb-q-f
+025 adverb-q-function
+026 adverb-q-format
+027 adverb-q-h
+028 adverb-q-hash
+029 adverb-q-heredoc
+030 adverb-q-o
+031 adverb-q-q
+032 adverb-q-qq
+033 adverb-q-quotewords
+034 adverb-q-s
+035 adverb-q-scalar
+036 adverb-q-single
+037 adverb-q-to
+038 adverb-q-v
+039 adverb-q-val
+040 adverb-q-w
+041 adverb-q-words
+042 adverb-q-ww
+043 adverb-q-x
+044 
+045 # KEY                 TRANSLATION
+046 adverb-rx-c
+047 adverb-rx-continue
+048 adverb-rx-ex
+049 adverb-rx-exhaustive
+050 adverb-rx-g
+051 adverb-rx-global
+052 adverb-rx-i
+053 adverb-rx-ignorecase
+054 adverb-rx-ignoremark
+055 adverb-rx-ii
+056 adverb-rx-m
+057 adverb-rx-mm
+058 adverb-rx-nd
+059 adverb-rx-nth
+060 adverb-rx-ov
+061 adverb-rx-overlap
+062 adverb-rx-p
+063 adverb-rx-pos
+064 adverb-rx-r
+065 adverb-rx-ratchet
+066 adverb-rx-rd
+067 adverb-rx-s
+068 adverb-rx-samecase
+069 adverb-rx-samemark
+070 adverb-rx-samespace
+071 adverb-rx-sigspace
+072 adverb-rx-ss
+073 adverb-rx-st
+074 adverb-rx-to
+075 adverb-rx-x
+076 
+077 # KEY           TRANSLATION
+078 block-default
+079 block-else
+080 block-elsif
+081 block-for
+082 block-given
+083 block-if
+084 block-loop
+085 block-orwith
+086 block-repeat
+087 block-unless
+088 block-until
+089 block-when
+090 block-whenever
+091 block-while
+092 block-with
+093 block-without
+094 
+095 # KEY             TRANSLATION
+096 constraint-where
+097 
+098 # KEY                  TRANSLATION
+099 core-abs
+100 core-all
+101 core-antipairs
+102 core-any
+103 core-append
+104 core-ast
+105 core-atomic-add-fetch
+106 core-atomic-assign
+107 core-atomic-dec-fetch
+108 core-atomic-fetch
+109 core-atomic-fetch-add
+110 core-atomic-fetch-dec
+111 core-atomic-fetch-inc
+112 core-atomic-fetch-sub
+113 core-atomic-inc-fetch
+114 core-atomic-sub-fetch
+115 core-await
+116 
+117 # KEY          TRANSLATION
+118 core-bag
+119 core-bail-out
+120 core-bless
+121 
+122 # KEY              TRANSLATION
+123 core-callframe
+124 core-callsame
+125 core-callwith
+126 core-can-ok
+127 core-cas
+128 core-categorize
+129 core-ceiling
+130 core-chars
+131 core-chdir
+132 core-chmod
+133 core-chomp
+134 core-chop
+135 core-chown
+136 core-chr
+137 core-chrs
+138 core-classify
+139 core-close
+140 core-cmp-ok
+141 core-codes
+142 core-comb
+143 core-combinations
+144 core-conj
+145 core-contains
+146 core-cross
+147 
+148 # KEY         TRANSLATION
+149 core-decode
+150 core-deepmap
+151 core-defined
+152 core-diag
+153 core-die
+154 core-dies-ok
+155 core-dir
+156 core-does-ok
+157 core-done
+158 core-duckmap
+159 
+160 # KEY               TRANSLATION
+161 core-elems
+162 core-emit
+163 core-encode
+164 core-end
+165 core-ends-with
+166 core-eval-dies-ok
+167 core-eval-lives-ok
+168 core-exit
+169 core-exp
+170 core-expmod
+171 
+172 # KEY              TRANSLATION
+173 core-fail
+174 core-fails-like
+175 core-fc
+176 core-first
+177 core-flat
+178 core-flip
+179 core-floor
+180 core-flunk
+181 core-fmt
+182 core-full-barrier
+183 
+184 # KEY      TRANSLATION
+185 core-get
+186 core-getc
+187 core-gist
+188 core-grep
+189 
+190 # KEY      TRANSLATION
+191 core-hash
+192 core-head
+193 
+194 # KEY           TRANSLATION
+195 core-indent
+196 core-index
+197 core-indices
+198 core-indir
+199 core-is
+200 core-is-approx
+201 core-is-deeply
+202 core-is-prime
+203 core-isa-ok
+204 core-isnt
+205 core-item
+206 
+207 # KEY      TRANSLATION
+208 core-join
+209 
+210 # KEY      TRANSLATION
+211 core-key
+212 core-keys
+213 core-kv
+214 
+215 # KEY          TRANSLATION
+216 core-last
+217 core-lastcall
+218 core-lc
+219 core-like
+220 core-lines
+221 core-link
+222 core-list
+223 core-lives-ok
+224 core-lsb
+225 
+226 # KEY        TRANSLATION
+227 core-make
+228 core-map
+229 core-match
+230 core-max
+231 core-min
+232 core-minmax
+233 core-mix
+234 core-mkdir
+235 core-move
+236 core-msb
+237 
+238 # KEY            TRANSLATION
+239 core-new
+240 core-next
+241 core-nextcallee
+242 core-nextsame
+243 core-nextwith
+244 core-nok
+245 core-none
+246 core-not
+247 core-note
+248 
+249 # KEY      TRANSLATION
+250 core-ok
+251 core-one
+252 core-open
+253 core-ord
+254 core-ords
+255 
+256 # KEY              TRANSLATION
+257 core-pair
+258 core-pairs
+259 core-parse-base
+260 core-pass
+261 core-permutations
+262 core-pick
+263 core-plan
+264 core-pop
+265 core-prepend
+266 core-print
+267 core-printf
+268 core-proceed
+269 core-prompt
+270 core-push
+271 core-put
+272 
+273 # KEY            TRANSLATION
+274 core-rand
+275 core-redo
+276 core-reduce
+277 core-repeated
+278 core-repl
+279 core-return
+280 core-return-rw
+281 core-reverse
+282 core-rindex
+283 core-rmdir
+284 core-roll
+285 core-roots
+286 core-rotate
+287 core-round
+288 core-roundrobin
+289 core-run
+290 
+291 # KEY             TRANSLATION
+292 core-samecase
+293 core-samemark
+294 core-samewith
+295 core-say
+296 core-set
+297 core-shell
+298 core-shift
+299 core-sign
+300 core-signal
+301 core-skip
+302 core-skip-rest
+303 core-sleep
+304 core-sleep-timer
+305 core-sleep-until
+306 core-slip
+307 core-slurp
+308 core-snip
+309 core-snitch
+310 core-so
+311 core-sort
+312 core-splice
+313 core-split
+314 core-sprintf
+315 core-spurt
+316 core-sqrt
+317 core-squish
+318 core-srand
+319 core-starts-with
+320 core-subbuf
+321 core-subbuf-rw
+322 core-subst
+323 core-substr
+324 core-substr-eq
+325 core-substr-rw
+326 core-subtest
+327 core-succeed
+328 core-sum
+329 core-symlink
+330 
+331 # KEY               TRANSLATION
+332 core-tail
+333 core-take
+334 core-take-rw
+335 core-tc
+336 core-tclc
+337 core-throws-like
+338 core-todo
+339 core-trans
+340 core-trim
+341 core-trim-leading
+342 core-trim-trailing
+343 core-truncate
+344 
+345 # KEY          TRANSLATION
+346 core-uc
+347 core-unimatch
+348 core-uniname
+349 core-uninames
+350 core-uniparse
+351 core-uniprop
+352 core-uniprops
+353 core-unique
+354 core-unival
+355 core-univals
+356 core-unlike
+357 core-unlink
+358 core-unpolar
+359 core-unshift
+360 core-use-ok
+361 
+362 # KEY        TRANSLATION
+363 core-val
+364 core-value
+365 core-values
+366 
+367 # KEY          TRANSLATION
+368 core-warn
+369 core-wordcase
+370 core-words
+371 
+372 # KEY     TRANSLATION
+373 core-zip
+374 
+375 # KEY             TRANSLATION
+376 infix-(cont)
+377 infix-(elem)
+378 infix-^ff
+379 infix-^ff^
+380 infix-^fff
+381 infix-^fff^
+382 infix-after
+383 infix-and
+384 infix-andthen
+385 infix-before
+386 infix-but
+387 infix-cmp
+388 infix-coll
+389 infix-div
+390 infix-does
+391 infix-eq
+392 infix-ff
+393 infix-ff^
+394 infix-fff
+395 infix-fff^
+396 infix-gcd
+397 infix-ge
+398 infix-gt
+399 infix-lcm
+400 infix-le
+401 infix-leg
+402 infix-lt
+403 infix-max
+404 infix-min
+405 infix-minmax
+406 infix-mod
+407 infix-ne
+408 infix-notandthen
+409 infix-o
+410 infix-or
+411 infix-orelse
+412 infix-unicmp
+413 infix-x
+414 infix-X
+415 infix-xx
+416 infix-Z
+417 
+418 # KEY   TRANSLATION
+419 meta-R
+420 meta-X
+421 meta-Z
+422 
+423 # KEY             TRANSLATION
+424 modifier-for
+425 modifier-given
+426 modifier-if
+427 modifier-unless
+428 modifier-until
+429 modifier-when
+430 modifier-while
+431 modifier-with
+432 modifier-without
+433 
+434 # KEY        TRANSLATION
+435 multi-multi
+436 multi-only
+437 multi-proto
+438 
+439 # KEY           TRANSLATION
+440 named-absolute
+441 named-actions
+442 named-api
+443 named-append
+444 named-arg0
+445 named-args
+446 named-as
+447 named-at
+448 named-auth
+449 
+450 # KEY            TRANSLATION
+451 named-basename
+452 named-batch
+453 named-bin
+454 named-bleed
+455 named-broadcast
+456 
+457 # KEY             TRANSLATION
+458 named-catch
+459 named-check
+460 named-chomp
+461 named-close
+462 named-command
+463 named-complement
+464 named-completely
+465 named-continue
+466 named-control
+467 named-count
+468 named-create
+469 named-createonly
+470 named-cwd
+471 named-CWD
+472 
+473 # KEY          TRANSLATION
+474 named-date
+475 named-day
+476 named-degree
+477 named-delete
+478 named-dirname
+479 
+480 # KEY             TRANSLATION
+481 named-elems
+482 named-emit-timed
+483 named-enc
+484 named-encoding
+485 named-end
+486 named-err
+487 named-every
+488 named-ex
+489 named-exclusive
+490 named-exhaustive
+491 named-expires
+492 
+493 # KEY            TRANSLATION
+494 named-family
+495 named-filename
+496 named-filter
+497 named-formatter
+498 
+499 # KEY         TRANSLATION
+500 named-g
+501 named-gid
+502 named-global
+503 
+504 # KEY       TRANSLATION
+505 named-host
+506 named-hour
+507 
+508 # KEY             TRANSLATION
+509 named-i
+510 named-ignorecase
+511 named-ignoremark
+512 named-ii
+513 named-in
+514 named-into
+515 
+516 # KEY         TRANSLATION
+517 named-joiner
+518 
+519 # KEY      TRANSLATION
+520 named-k
+521 named-key
+522 named-kv
+523 
+524 # KEY            TRANSLATION
+525 named-listen
+526 named-localhost
+527 named-localport
+528 
+529 # KEY         TRANSLATION
+530 named-match
+531 named-merge
+532 named-minute
+533 named-mm
+534 named-mode
+535 named-month
+536 
+537 # KEY               TRANSLATION
+538 named-name
+539 named-nd
+540 named-nl
+541 named-nl-in
+542 named-nl-out
+543 named-non-blocking
+544 named-nth
+545 
+546 # KEY             TRANSLATION
+547 named-off
+548 named-out
+549 named-out-buffer
+550 named-ov
+551 named-overlap
+552 
+553 # KEY          TRANSLATION
+554 named-p
+555 named-partial
+556 named-parts
+557 named-port
+558 named-pos
+559 named-primary
+560 
+561 # KEY             TRANSLATION
+562 named-quaternary
+563 
+564 # KEY              TRANSLATION
+565 named-r
+566 named-rd
+567 named-real
+568 named-replacement
+569 named-rule
+570 named-rw
+571 named-rx
+572 
+573 # KEY              TRANSLATION
+574 named-samecase
+575 named-samespace
+576 named-scheduler
+577 named-second
+578 named-secondary
+579 named-seconds
+580 named-shared
+581 named-size
+582 named-slip
+583 named-SPEC
+584 named-squash
+585 named-ss
+586 named-st
+587 named-status
+588 named-strict
+589 named-subscript
+590 named-superscript
+591 
+592 # KEY               TRANSLATION
+593 named-tertiary
+594 named-test
+595 named-th
+596 named-times
+597 named-timezone
+598 named-translate-nl
+599 named-truncate
+600 
+601 # KEY         TRANSLATION
+602 named-uid
+603 named-update
+604 
+605 # KEY          TRANSLATION
+606 named-v
+607 named-value
+608 named-vent-at
+609 named-ver
+610 named-volume
+611 
+612 # KEY                    TRANSLATION
+613 named-w
+614 named-where
+615 named-win-verbatim-args
+616 
+617 # KEY    TRANSLATION
+618 named-x
+619 
+620 # KEY       TRANSLATION
+621 named-year
+622 
+623 # KEY            TRANSLATION
+624 package-class
+625 package-grammar
+626 package-module
+627 package-package
+628 package-role
+629 
+630 # KEY           TRANSLATION
+631 phaser-BEGIN
+632 phaser-CATCH
+633 phaser-CHECK
+634 phaser-CLOSE
+635 phaser-CONTROL
+636 phaser-DOC
+637 phaser-END
+638 phaser-ENTER
+639 phaser-FIRST
+640 phaser-INIT
+641 phaser-KEEP
+642 phaser-LAST
+643 phaser-LEAVE
+644 phaser-NEXT
+645 phaser-POST
+646 phaser-PRE
+647 phaser-QUIT
+648 phaser-UNDO
+649 
+650 # KEY                      TRANSLATION
+651 pragma-dynamic-scope
+652 pragma-fatal
+653 pragma-internals
+654 pragma-invocant
+655 pragma-isms
+656 pragma-lib
+657 pragma-MONKEY
+658 pragma-MONKEY-GUTS
+659 pragma-MONKEY-SEE-NO-EVAL
+660 pragma-MONKEY-TYPING
+661 pragma-nqp
+662 pragma-precompilation
+663 pragma-soft
+664 pragma-strict
+665 pragma-trace
+666 pragma-variables
+667 pragma-worries
+668 
+669 # KEY       TRANSLATION
+670 prefix-not
+671 prefix-so
+672 
+673 # KEY          TRANSLATION
+674 quote-lang-m
+675 quote-lang-ms
+676 quote-lang-q
+677 quote-lang-Q
+678 quote-lang-qq
+679 quote-lang-rx
+680 quote-lang-s
+681 quote-lang-S
+682 quote-lang-ss
+683 quote-lang-Ss
+684 
+685 # KEY              TRANSLATION
+686 routine-method
+687 routine-regex
+688 routine-rule
+689 routine-sub
+690 routine-submethod
+691 routine-token
+692 
+693 # KEY           TRANSLATION
+694 scope-anon
+695 scope-augment
+696 scope-constant
+697 scope-has
+698 scope-HAS
+699 scope-my
+700 scope-our
+701 scope-state
+702 scope-unit
+703 
+704 # KEY                TRANSLATION
+705 stmt-prefix-also
+706 stmt-prefix-do
+707 stmt-prefix-eager
+708 stmt-prefix-gather
+709 stmt-prefix-hyper
+710 stmt-prefix-lazy
+711 stmt-prefix-quietly
+712 stmt-prefix-race
+713 stmt-prefix-react
+714 stmt-prefix-sink
+715 stmt-prefix-start
+716 stmt-prefix-supply
+717 stmt-prefix-try
+718 
+719 # KEY               TRANSLATION
+720 system-ACCEPTS
+721 system-BUILD
+722 system-CALL-ME
+723 system-COERCE
+724 system-FALLBACK
+725 system-MAIN
+726 system-TWEAK
+727 system-UPGRADE-RAT
+728 
+729 # KEY      TRANSLATION
+730 term-nano
+731 term-now
+732 term-pi
+733 term-rand
+734 term-self
+735 term-tau
+736 term-time
+737 
+738 # KEY                           TRANSLATION
+739 trait-is-built
+740 trait-is-copy
+741 trait-is-default
+742 trait-is-DEPRECATED
+743 trait-is-equiv
+744 trait-is-export
+745 trait-is-hidden-from-backtrace
+746 trait-is-hidden-from-USAGE
+747 trait-is-implementation-detail
+748 trait-is-looser
+749 trait-is-nodal
+750 trait-is-pure
+751 trait-is-raw
+752 trait-is-rw
+753 trait-is-test-assertion
+754 trait-is-tighter
+755 
+756 # KEY             TRANSLATION
+757 traitmod-does
+758 traitmod-handles
+759 traitmod-hides
+760 traitmod-is
+761 traitmod-of
+762 traitmod-returns
+763 traitmod-trusts
+764 
+765 # KEY         TRANSLATION
+766 typer-enum
+767 typer-subset
+768 
+769 # KEY        TRANSLATION
+770 use-import
+771 use-need
+772 use-no
+773 use-require
+774 use-use
+775 
+776 # vim: expandtab shiftwidth=4

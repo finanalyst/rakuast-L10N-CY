@@ -1,2 +1,16 @@
-#!/usr/bin/env bash
-RAKUDO_RAKUAST=1 raku -I. -ML10N::CY $1
+#!/usr/bin/env raku
+sub draig(*@_) {
+    %*ENV<RAKUDO_RAKUAST> = 1;
+    %*ENV<RAKUDO_OPT>     = '-ML10N::CY';
+    run $*EXECUTABLE, @_;
+}
+
+multi sub MAIN() {
+    draig
+}
+
+multi sub MAIN(
+  $filename where *.IO.f  #= source file to be run in Welsh
+) {
+    draig $filename
+}

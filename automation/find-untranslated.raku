@@ -8,17 +8,18 @@ sub MAIN( $fn where *.IO.f = 'CY') {
     my $rem;
     for $fn.IO.lines {
         $line-start = (++$line-num).fmt( '%03d ' );
-        if / ^ '#' / {
-            @partials.push: $line-start ~ $_;
-        }
-        else {
-            if / ^ ( \S+ ) \s+ / {
-                @tobetrans.push: $line-start ~ $/.postmatch.trim;
-                @partials.push: $line-start ~ $/[0].trim
+        if / ^ '#' <?before \S> / {
+            $rem = ~$/.postmatch;
+            if $rem ~~ / ^ ( <-[ # ]> \S+ ) \s+ / {
+                @tobetrans.push: $line-start ~ $/.postmatch;
+                @partials.push: $line-start ~ $/[0]
             }
             else {
                 @partials.push: $line-start ~ $_;
             }
+        }
+        else {
+            @partials.push: $line-start ~ $_;
         }
     }
     'partial.txt'.IO.spurt: @partials.join("\n");

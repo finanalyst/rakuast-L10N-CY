@@ -1,0 +1,6 @@
+#!/usr/bin/env raku
+sub MAIN(
+ $filename where *.IO.f  #= Welsh source file to be turned to canonical form
+) {
+   $filename.IO.extension('raku', :0parts).spurt: $filename.IO.slurp.AST("CY").DEPARSE
+}
